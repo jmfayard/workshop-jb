@@ -6,5 +6,10 @@ import org.junit.Test as test
 class _00_Start {
     test fun testOk() {
         Assert.assertEquals("OK", task0())
+
+    }
+
+    fun  task0() : String {
+        return "OK"
     }
 }
