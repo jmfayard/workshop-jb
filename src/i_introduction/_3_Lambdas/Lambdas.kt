@@ -5,7 +5,7 @@ import com.google.common.collect.Iterables
 
 fun examples() {
 
-    val sum = { (x: Int, y: Int) -> x + y }
+    val sum = { x: Int, y: Int -> x + y }
 
     val three = sum(1, 2)
 
@@ -35,8 +35,20 @@ fun todoTask3(collection: Collection<Int>) = TODO(
     """,
     references = { JavaCode3().task3(collection) })
 
-fun task3(collection: Collection<Int>): Boolean = todoTask3(collection)
 
 
+fun task3(collection: Collection<Int>): Boolean {
+    return Iterables.any<Int>(collection) {
+        x -> x % 42 == 0
+    }
+            
+            /**
+            object : Predicate<Int> {
 
+
+        override fun apply(element: Int?): Boolean {
+            return element!! % 42 == 0
+        }
+    })**/
+}
 
