@@ -41,7 +41,7 @@ fun task3(collection: Collection<Int>): Boolean {
     return Iterables.any<Int>(collection) {
         x -> x % 42 == 0
     }
-            
+
             /**
             object : Predicate<Int> {
 
