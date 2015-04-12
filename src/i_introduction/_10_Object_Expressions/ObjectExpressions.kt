@@ -39,7 +39,13 @@ fun todoTask10() = TODO(
 )
 
 fun task10(handleMouse: (MouseListener) -> Unit): Int {
-    var mouseClicks = 0
-    handleMouse(todoTask10())
-    return mouseClicks
+    class MyMouseAdapter : MouseAdapter() {
+        var clicks = 0
+        override fun mouseClicked(e: MouseEvent) {
+            clicks++
+        }
+    }
+    val adapter = MyMouseAdapter()
+    handleMouse(adapter)
+    return adapter.clicks
 }
