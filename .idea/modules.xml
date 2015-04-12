@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/beustchallenge/beustchallenge.iml" filepath="$PROJECT_DIR$/beustchallenge/beustchallenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/workshop-jb.iml" filepath="$PROJECT_DIR$/workshop-jb.iml" />
     </modules>
   </component>
 </project>
-
