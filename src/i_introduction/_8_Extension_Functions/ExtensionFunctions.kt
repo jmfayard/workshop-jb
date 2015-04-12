@@ -1,5 +1,7 @@
 package i_introduction._8_Extension_Functions.StringExtensions
 
+import syntax.properties.A
+import syntax.properties.B
 import util.TODO
 
 
@@ -27,7 +29,10 @@ fun todoTask8() = TODO(
 
 data class RationalNumber(val numerator: Int, val denominator: Int)
 
-fun Int.r(): RationalNumber = todoTask8()
-fun Pair<Int, Int>.r(): RationalNumber = todoTask8()
+fun Int.r(): RationalNumber =
+    RationalNumber(this, 1)
+
+fun Pair<Int, Int>.r(): RationalNumber =
+        RationalNumber(first, second)
 
 
