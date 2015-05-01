@@ -41,6 +41,10 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : B {
                 return copy(dayOfMonth = dayOfMonth+1)
     }
 
+    fun rangeTo(endDate: MyDate): DateRange {
+        return  DateRange(this, endDate)
+    }
+
 }
 
 enum class TimeInterval {
