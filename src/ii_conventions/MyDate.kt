@@ -3,7 +3,9 @@ package ii_conventions
 import i_introduction._0_Hello_World.Hello._00_Start
 import syntax.qualifiedThis.labelsForExtensionFunctionLiterals
 
-data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : B {
+data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : B, kotlin.Comparable<MyDate>  {
+    override fun compareTo(other: MyDate): Int = compareTo(other as B)
+
     override fun compareTo(other: B): Int {
         if (other !is MyDate) {
             throw ClassCastException()
@@ -57,7 +59,11 @@ enum class TimeInterval {
         Use object expression to implement Iterator<MyDate>.
         Use an utility function 'MyDate.nextDay()'.
  */
-class DateRange(public val start: MyDate, public val end: MyDate) : Iterable<MyDate> {
+class DateRange(public override val start: MyDate, public override val end: MyDate) : kotlin.Range<MyDate>, Iterable<MyDate> {
+    override fun contains(item: MyDate): Boolean {
+        return (item >= start) && (item < end)
+    }
+
     override fun iterator(): Iterator<MyDate> {
         return object : Iterator<MyDate> {
             var current : MyDate = start
