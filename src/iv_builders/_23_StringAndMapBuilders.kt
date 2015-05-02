@@ -31,11 +31,18 @@ fun todoTask23() = TODO(
 )
 
 fun task23(): Map<Int, String> {
-    todoTask23()
-//    return buildMap {
-//        put(0, "0")
-//        for (i in 1..10) {
-//            put(i, "$i")
-//        }
-//    }
+//    todoTask23()
+    return buildMap {
+        put(0, "0")
+        for (i in 1..10) {
+            put(i, "$i")
+        }
+    }
+}
+
+fun buildMap(build: MutableMap<Int, String>.() -> Unit): MutableMap<Int, String> {
+    val map: MutableMap<Int, String> = hashMapOf()
+    map.build()
+    return  map
+
 }
