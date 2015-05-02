@@ -1,5 +1,7 @@
 package v_collections
 
+import v_collections.data.customers
+
 fun example4() {
     val max = listOf(1, 42, 4).max()
     val longestString = listOf("a", "b").maxBy { it.length() }
@@ -7,10 +9,10 @@ fun example4() {
 
 fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? {
     // Return a customer who ordered maximum number of orders
-    todoCollectionTask()
+    return customers.maxBy { it.orders.size() }
 }
 
 fun Customer.getMostExpensiveOrderedProduct(): Product? {
     // Return the most expensive ordered product
-    todoCollectionTask()
+    return orders.flatMap { it.products }.maxBy { it.price }
 }
