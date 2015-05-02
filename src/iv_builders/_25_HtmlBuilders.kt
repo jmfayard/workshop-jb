@@ -21,17 +21,17 @@ fun renderProductTable(): String {
     return html {
         table {
             tr {
-                td(color = getTitleColor(), init = { text("Product") })
-                td(color = getTitleColor(), init = { text("Price") })
-                td(color = getTitleColor(), init = { text("Popularity") })
+                td (color = getTitleColor()) { text("Product") }
+                td (color = getTitleColor()) { text("Price") }
+                td (color = getTitleColor()) { text("Popularity") }
             }
             val products = getProducts()
             for (index in 0..products.size()-1) {
                 val product = products.get(index)
                 tr {
                     td (color = getCellColor(index, 1), init = { text(product.description) })
-                    td (color = getCellColor(index, 1), init = { text(product.price) })
-                    td (color = getCellColor(index, 1), init = { text(product.popularity) })
+                    td (color = getCellColor(index, 2), init = { text(product.price) })
+                    td (color = getCellColor(index, 3), init = { text(product.popularity) })
 
                 }
             }
