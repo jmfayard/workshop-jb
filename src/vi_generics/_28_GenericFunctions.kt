@@ -21,19 +21,25 @@ fun task28() = TODO(
         }
 )
 
+
 fun List<String>.partitionWordsAndLines(): Pair<List<String>, List<String>> {
-    task28()
-//    return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
+//    task28()
+    return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
 }
 
 fun Set<Char>.partitionLettersAndOtherSymbols(): Pair<Set<Char>, Set<Char>> {
-    task28()
-//    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
+//    task28()
+    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
 }
 
-//fun <T> partitionTo(c1: Collection<T>, c2: Collection<T>, predicate: (T) -> Boolean ): Pair<Any, Any> {
-//    val res1 = hashSet1.filter { predicate(it) }.toHashSet()
-//    val res2 = hashSet2.filterNot { predicate(it) }.toHashSet()
-//    return Pair(res1, res2)
-//}
+fun <T> partitionTo(c1: Collection<T>, c2: Collection<T>, predicate: (T) -> Boolean ): Pair<Ensemble<T>, Ensemble<T>> {
+    val res1 = c1.filter { predicate(it) }.toEnsemble()
+    val res2 = c1.filterNot { predicate(it) }.toEnsemble()
+    return Pair(res1, res2)
+}
 
+
+public class Ensemble<T>(c: Collection<T>) : ArrayList<T>(c), Set<T> {
+
+}
+fun <T> Collection<T>.toEnsemble() : Ensemble<T> = Ensemble<T>(this)
