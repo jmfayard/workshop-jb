@@ -1,6 +1,7 @@
-package viii_beustchallenge
+package viii_beustchallenge._1_
 
 import syntax.operatorOverloading.test
+import viii_beustchallenge.JavaBeustSequence
 import kotlin.properties.Delegates
 
 /**
@@ -25,6 +26,7 @@ class MyListener : JavaBeustSequence.Listener {
     }
 }
 
+class Solution1 {
 fun main(args: Array<String>) {
     val listener = MyListener()
     JavaBeustSequence.findAll(Long.MAX_VALUE, listener)
@@ -41,4 +43,5 @@ fun main(args: Array<String>) {
 
      */
 
+}
 }

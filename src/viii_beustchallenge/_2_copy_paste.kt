@@ -1,4 +1,4 @@
-package viii_beustchallenge
+package viii_beustchallenge._2_
 
 /**
  * Finds base 10 numbers whose digits don't repeat. Solution to Cedric's coding
