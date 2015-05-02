@@ -3,6 +3,7 @@ package vi_generics.generics
 import java.util.ArrayList
 import java.util.HashSet
 import util.TODO
+import kotlin.properties.Delegates
 
 fun task28() = TODO(
     """
@@ -20,24 +21,19 @@ fun task28() = TODO(
         }
 )
 
-public trait ListAndSet<T> : List<T>, Set<T>
-
 fun List<String>.partitionWordsAndLines(): Pair<List<String>, List<String>> {
-//    task28()
-    return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
+    task28()
+//    return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
 }
 
 fun Set<Char>.partitionLettersAndOtherSymbols(): Pair<Set<Char>, Set<Char>> {
-//    task28()
-    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
+    task28()
+//    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
 }
 
-fun <T> partitionTo(hashSet1: Collection<T>, hashSet2: Collection<T>, predicate: (T) -> Boolean ): Pair<ListAndSet<T>, ListAndSet<T>> {
-    throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
-}
-
-//fun <T> partitionTo(first: Collection<T>, second: Collection<*>, predicate: (T) -> Boolean): Pair<List<T>, List<T>> {
-
-
-//public inline fun <T> partitionTo(c1, Collection 2, predicate: (T) -> Boolean): Pair<List<T>, List<T>> {
+//fun <T> partitionTo(c1: Collection<T>, c2: Collection<T>, predicate: (T) -> Boolean ): Pair<Any, Any> {
+//    val res1 = hashSet1.filter { predicate(it) }.toHashSet()
+//    val res2 = hashSet2.filterNot { predicate(it) }.toHashSet()
+//    return Pair(res1, res2)
+//}
 
