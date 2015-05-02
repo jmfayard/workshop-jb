@@ -15,11 +15,11 @@ fun todoTask24() = TODO(
     """
 )
 
-fun task24(): Boolean = todoTask24()
+fun task24(): Boolean = true
 
 fun buildString(): String {
     val stringBuilder = StringBuilder()
-    with (stringBuilder) {
+    given (stringBuilder) {
         append("Numbers: ")
         for (i in 1..10) {
             append(i)
@@ -28,9 +28,14 @@ fun buildString(): String {
     return stringBuilder.toString()
 }
 
+fun <T,R> given(receiver: T, execute: T.() -> R) : R {
+    return receiver.execute()
+}
+fun <T> identitiy(src: T) : T = src
+
 fun buildMap(): Map<Int, String> {
     val map = HashMap<Int, String>()
-    with (map) {
+    given (map) {
         put(0, "0")
         for (i in 1..10) {
             put(i, "$i")
