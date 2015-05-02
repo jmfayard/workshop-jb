@@ -15,7 +15,7 @@ import util.TODO
 
 fun useReadonlySet(set: Set<Int>) {
     // doesn't compile:
-    //    set.add(1)
+//    set.add(1)
 }
 
 fun useMutableSet(set: MutableSet<Int>) {
@@ -34,7 +34,7 @@ fun example0(list: List<Int>) {
 
 fun Shop.getSetOfCustomers(): Set<Customer> {
     // Return a set containing all the customers of this shop
-    todoCollectionTask()
-//    return this.customers
+//    todoCollectionTask()
+    return this.customers.toSet()
 }
 
