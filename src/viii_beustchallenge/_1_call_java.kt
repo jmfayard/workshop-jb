@@ -15,7 +15,7 @@ import kotlin.properties.Delegates
  *  We only need to implement interface Listener with this one function
  *      public fun hear(newValue:Long)
  */
-class MyListener : JavaBeustSequence.Listener {
+open class MyListener : JavaBeustSequence.Listener {
     val startedAt : Long    = System.currentTimeMillis()
     var latestAt  : Long    = System.currentTimeMillis()
     var found = 0

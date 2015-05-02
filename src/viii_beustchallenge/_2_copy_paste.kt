@@ -72,7 +72,7 @@ public class JavaBeustSequence {
          * *
          * @return true if we reached max, false otherwise
          */
-        private fun find(start: Digit, head: Digit, remaining: Int, value: Long, max: Long, listener: Listener): Boolean {
+        private fun find(start: Digit?, head: Digit?, remaining: Int, value: Long, max: Long, listener: Listener): Boolean {
             run {
                 var current: Digit? = start
                 while (current != null) {
@@ -82,7 +82,7 @@ public class JavaBeustSequence {
                         listener.hear(newValue)
                     } else {
                         current!!.use()
-                        val newHead = if ((current == head)) head.next else head
+                        val newHead = if ((current == head)) head!!.next else head
                         if (find(newHead, newHead, remaining - 1, newValue * 10, max, listener))
                             return true
                         current!!.yield()
