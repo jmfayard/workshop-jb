@@ -3,3 +3,5 @@ workspace.xml
 keys
 results.txt
 .idea
+.idea/uiDesigner.xml
+.idea/modules.xml
